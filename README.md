@@ -1,6 +1,6 @@
 When running the vite dev server for Marko/run via `npm run dev` I'm noticing function calls from +handler.ts files are not able to reference class instances declared in the root index.ts file. 
 
-In this example (using express and socket.io) the io instance in [socket.ts](./src/socket.ts) first gets intialized by the call to `initSocketServer` in [index.ts](./src/index.ts), then when referenced by the call to `emitToSocket` in [+handler.ts](./src/routes/_index/handler.ts) the following TypeError is thrown due to io being undefined: 
+In this example (using express and socket.io) the io instance in [socket.ts](./src/socket.ts) first gets intialized by the call to `initSocketServer` in [index.ts](./src/index.ts), then when referenced by the call to `emitToSocket` in [+handler.ts](./src/routes/_index/+handler.ts) the following TypeError is thrown due to io being undefined: 
 ```
 TypeError: Cannot read properties of undefined (reading 'emit')
     at Module.emitToSocket (/Users/colin/Projects/marko-run-vite-issue/src/socket.ts:12:6)
