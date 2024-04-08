@@ -4,16 +4,19 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "marko": "^5.33.5"
+    "express": "^4.19.2",
+    "marko": "^5.33.5",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
-    "@marko/run": "^0.4.3"
+    "@marko/run": "^0.4.3",
+    "@marko/run-adapter-node": "^0.1.12"
   },
   "private": true,
   "scripts": {
-    "dev": "marko-run",
-    "build": "marko-run build",
-    "preview": "marko-run preview",
+    "dev": "marko-run src/index.ts",
+    "build": "marko-run build src/index.ts -o dist/",
+    "preview": "marko-run preview src/index.ts",
     "start": "node --enable-source-maps ./dist/index.mjs"
   }
 }
